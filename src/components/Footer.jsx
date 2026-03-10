@@ -1,34 +1,6 @@
-// import React from "react";
-
-// function Footer() {
-//   return (
-//     <footer className="bg-black border-t border-white/10 py-16">
-//       <div className="max-w-7xl mx-auto px-4 text-center">
-
-//         {/* Brand */}
-//         <h2 className="text-2xl font-bold text-yellow-400 mb-4">
-//           SabPe Gold
-//         </h2>
-
-//         {/* Description */}
-//         <p className="text-white/60 mb-6">
-//           Your trusted digital gold investment platform.
-//         </p>
-
-//         {/* Copyright */}
-//         <p className="text-white/40 text-sm">
-//           © 2024 SabPe Gold. All rights reserved.
-//         </p>
-
-//       </div>
-//     </footer>
-//   );
-// }
-
-// export default Footer;
 import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
-
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="bg-black text-white border-t border-white/10 pt-16 pb-8">
@@ -90,10 +62,25 @@ function Footer() {
         <div>
           <h3 className="font-semibold mb-4">Legal</h3>
           <ul className="space-y-2 text-white/60 text-sm">
-            <li><a href="#" className="hover:text-yellow-400 transition-colors">Privacy Policy</a></li>
+          <li>
+<Link to="/privacy-policy">Privacy Policy</Link>
+</li>
+
+<li>
+<Link to="/terms">Terms of Service</Link>
+</li>
+
+<li>
+<Link to="/refund-policy">Refund Policy</Link>
+</li>
+
+<li>
+<Link to="/disclaimer">Disclaimer</Link>
+</li>
+            {/* <li><a href="#" className="hover:text-yellow-400 transition-colors">Privacy Policy</a></li>
             <li><a href="#" className="hover:text-yellow-400 transition-colors">Terms of Service</a></li>
             <li><a href="#" className="hover:text-yellow-400 transition-colors">Refund Policy</a></li>
-            <li><a href="#" className="hover:text-yellow-400 transition-colors">Disclaimer</a></li>
+            <li><a href="#" className="hover:text-yellow-400 transition-colors">Disclaimer</a></li> */}
           </ul>
         </div>
       </div>
