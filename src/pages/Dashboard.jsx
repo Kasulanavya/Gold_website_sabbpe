@@ -1,36 +1,53 @@
-import { useState } from "react";
+//Directly into dashboard
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import DashboardNavbar from "../components/DashboardNavbar";
 import BuyGold from "../dashboard/BuyGold";
 import SellGold from "../dashboard/SellGold";
 import Portfolio from "../dashboard/Portfolio";
 import Profile from "../dashboard/Profile";
+
 function Dashboard() {
 
-  const [activeTab, setActiveTab] = useState("profile");
+  const [activeTab,setActiveTab] = useState("profile");
+
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+
+    const logged = localStorage.getItem("isLoggedIn");
+
+    if(!logged){
+      navigate("/login");
+    }
+
+  },[]);
 
   const renderContent = () => {
 
-    switch (activeTab) {
+    switch(activeTab){
 
       case "profile":
-        return <Profile/>;
+        return <Profile/>
 
       case "portfolio":
-        return <Portfolio />;
-        
+        return <Portfolio/>
+
       case "buy":
-        return <BuyGold />;
+        return <BuyGold/>
 
       case "sell":
-        return <SellGold />;;
+        return <SellGold/>
 
       default:
-        return null;
+        return null
+
     }
 
   };
 
   return (
+
     <div className="bg-black min-h-screen text-white">
 
       <DashboardNavbar
@@ -45,7 +62,9 @@ function Dashboard() {
       </div>
 
     </div>
+
   );
+
 }
 
 export default Dashboard;
