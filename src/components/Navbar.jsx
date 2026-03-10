@@ -216,9 +216,21 @@ function Navbar() {
               Contact
             </button>
 
-            <button className="bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold">
+            {/* Login Button */}
+            <Link
+              to="/login"
+              className="text-white border border-yellow-400 px-5 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition"
+            >
+              Login
+            </Link>
+
+            {/* Start Investing Button */}
+            <Link
+              to="/signup"
+              className="bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold hover:scale-105 transition"
+            >
               Start Investing
-            </button>
+            </Link>
 
           </div>
 
@@ -260,12 +272,23 @@ function Navbar() {
               Contact
             </button>
 
-            <button
+            {/* Login */}
+            <Link
+              to="/login"
+              onClick={closeMenu}
+              className="text-white border border-yellow-400 px-6 py-2 rounded-full"
+            >
+              Login
+            </Link>
+
+            {/* Signup */}
+            <Link
+              to="/signup"
               onClick={closeMenu}
               className="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold"
             >
               Start Investing
-            </button>
+            </Link>
 
           </div>
         )}
